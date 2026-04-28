@@ -1,0 +1,27 @@
+</> Markdown 
+
+# AWS Secure VPC Lab IP Plan 
+
+VPC CIDR: 
+
+10.10.0.0/16
+
+
+
+Subnets:
+
+
+1. Public Subnet 
+Name: Public-subnet-a
+CIDR 10.10.1.0/24
+Purpose: Public resources like NAT Gateway or future load balancer 
+
+2. Private App Subnet 
+Name: private-app-subnet-a
+CIDR: 10.10.11.0/24 
+Purpose: Private Linux Ec2 app server 
+
+3. Private Data Subnet
+Name: private-data-subnet-a
+CIDR: 10.10.21.0/24
+Purpose: Future database subnet, no direct internet access 
