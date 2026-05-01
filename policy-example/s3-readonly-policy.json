@@ -2,13 +2,25 @@
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "ListOnlySpecificBucket",
+      "Sid": "AllowConsoleToListBucketNames",
       "Effect": "Allow",
-      "Action": "s3:ListAllBuckets",
+      "Action": "s3:ListAllMyBuckets",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AllowConsoleToFindBucketRegion",
+      "Effect": "Allow",
+      "Action": "s3:GetBucketLocation",
       "Resource": "arn:aws:s3:::cloud-lab-secure-bucket-0001-951452431997-us-west-1-an"
     },
     {
-      "Sid": "ReadObjectsonly",
+      "Sid": "AllowUserToListObjectsInSpecificBucket",
+      "Effect": "Allow",
+      "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::cloud-lab-secure-bucket-0001-951452431997-us-west-1-an"
+    },
+    {
+      "Sid": "AllowUserToReadObjectsOnly",
       "Effect": "Allow",
       "Action": "s3:GetObject",
       "Resource": "arn:aws:s3:::cloud-lab-secure-bucket-0001-951452431997-us-west-1-an/*"
